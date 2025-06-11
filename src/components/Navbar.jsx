@@ -7,7 +7,7 @@ function Navbar() {
   const toggleMenu = () => setMenuOpen(!menuOpen);
 
   return (
-    <header className="fixed w-full top-0 bg-white shadow-md z-50 py-4">
+    <header className="fixed w-full top-0 bg-white bg-opacity-85 backdrop-blur-sm shadow-md z-50 py-4">
       <div className="flex justify-between items-center max-w-screen-xl mx-auto px-4">
         <div className="flex items-center space-x-4">
           <img src="/assets/portofolio-logo.png" alt="Logo" className="h-10" />

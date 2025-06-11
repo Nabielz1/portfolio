@@ -18,9 +18,9 @@ function Skills() {
   ];
 
   return (
-    <section id="skills" className="py-20 px-4 bg-gray-100">
-      <h2 className="text-3xl font-semibold mb-6 text-center">Skills</h2>
-      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-2">
+    <section id="skills" className="py-20 px-48 bg-white">
+      <h2 className="text-3xl font-semibold mb-6 border-b-4 max-w-fit">Skills</h2>
+      <div className="grid gap-20 sm:grid-cols-2 lg:grid-cols-2">
         <div>
           <h3 className="text-xl font-semibold mb-4">Hard Skills</h3>
           <ul>
@@ -30,7 +30,7 @@ function Skills() {
                   <span>{item.skill}</span>
                   <span>{item.progress}%</span>
                 </div>
-                <div className="w-full bg-gray-200 rounded-full h-2">
+                <div className="w-full bg-gray-300 rounded-full h-2">
                   <div
                     className="bg-gray-800 h-2 rounded-full"
                     style={{ width: `${item.progress}%` }}
@@ -50,7 +50,7 @@ function Skills() {
                   <span>{item.skill}</span>
                   <span>{item.progress}%</span>
                 </div>
-                <div className="w-full bg-gray-200 rounded-full h-2">
+                <div className="w-full bg-gray-300 rounded-full h-2">
                   <div
                     className="bg-gray-800 h-2 rounded-full"
                     style={{ width: `${item.progress}%` }}

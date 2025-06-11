@@ -22,8 +22,8 @@ function Contact() {
   };
 
   return (
-    <section id="contact" className="py-20 px-4 bg-gray-100">
-      <h2 className="text-3xl font-semibold mb-6 text-center">Contact</h2>
+    <section id="contact" className="py-20 px-48 bg-white">
+      <h2 className="text-3xl font-semibold mb-6 border-b-4 max-w-fit">Contact</h2>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
         <div>
           <div className="mb-6">
@@ -88,7 +88,7 @@ function Contact() {
                 required
               ></textarea>
             </div>
-            <button type="submit" className="w-full py-3 bg-gray-950 text-white rounded-md">Send Message</button>
+            <button type="submit" className="w-full py-3 bg-gray-950 text-white rounded-md hover:bg-gray-800">Send Message</button>
           </form>
         </div>
       </div>

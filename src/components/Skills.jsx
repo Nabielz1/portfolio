@@ -37,7 +37,7 @@ function Skills() {
   };
 
   return (
-    <div id="skills" className="py-20 px-48">
+    <div id="skills" className="py-20 px-48 bg-white">
       <div className="w-[100px] h-[100px] bg-violet-100 rounded-full absolute top-6 left-[42%] translate-x-1/2 filter blur-3xl opacity-20">
       </div>
           <h2 className="text-3xl font-semibold mb-6 border-b-4 pb-2 max-w-fit">Skills</h2>

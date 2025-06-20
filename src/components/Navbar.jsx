@@ -1,15 +1,24 @@
+// Navbar.jsx (Versi Perbaikan dengan "Saklar")
+
 import React, { useState, useEffect } from 'react';
 import '../App.css'; // Import Tailwind CSS styles
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeLink, setActiveLink] = useState('hero');
+  
+  // [PERUBAHAN 1]: Tambahkan state baru sebagai "saklar"
+  const [isClickScrolling, setIsClickScrolling] = useState(false);
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
 
   const handleLinkClick = (e, link) => {
     e.preventDefault();
-    setActiveLink(link);
+    
+    // [PERUBAHAN 2]: "Nyalakan" saklar sebelum scroll dimulai
+    setIsClickScrolling(true);
+    
+    setActiveLink(link); // Langsung set link aktif agar UI terasa instan
 
     if (menuOpen) {
       setMenuOpen(false);
@@ -25,12 +34,27 @@ function Navbar() {
         top: targetElement.offsetTop - headerOffset,
         behavior: 'smooth'
       });
+      
+      // [PERUBAHAN 3]: "Matikan" saklar setelah scroll selesai
+      // Durasi timeout harus cukup untuk animasi 'smooth' selesai (sekitar 800ms sudah aman)
+      setTimeout(() => {
+        setIsClickScrolling(false);
+      }, 800);
+    } else {
+        // Jika target tidak ada, langsung matikan saklar
+        setIsClickScrolling(false);
     }
   };
 
   useEffect(() => {
     const sections = document.querySelectorAll('section[id]');
+    
     const handleScroll = () => {
+      // [PERUBAHAN 4]: Jika saklar menyala (karena klik), hentikan fungsi ini
+      if (isClickScrolling) {
+        return; 
+      }
+
       let currentSectionId = '';
       const headerComponent = document.querySelector('header');
       const headerOffset = headerComponent ? headerComponent.offsetHeight : 80;
@@ -46,6 +70,7 @@ function Navbar() {
         setActiveLink(currentSectionId);
       }
       
+      // Bagian untuk animasi .reveal tetap sama
       const reveals = document.querySelectorAll('.reveal');
       reveals.forEach(element => {
           const windowHeight = window.innerHeight;
@@ -62,45 +87,40 @@ function Navbar() {
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, [activeLink]);
+  }, [activeLink, isClickScrolling]); // Tambahkan isClickScrolling ke dependency array
 
 
   return (
-    // responsive header component
+    // ... JSX Anda di sini tidak ada yang berubah sama sekali ...
+    // ... Cukup salin-tempel dari kode lama Anda ...
+    
     <header className="fixed top-0 w-full z-50 bg-[rgba(255,255,255,0.5)] backdrop-blur-sm shadow-md">
       <div className="mx-auto flex w-full max-w-screen-lg items-center justify-between px-6 py-4">
-        {/* Logo */}
         <a href="#hero" onClick={(e) => handleLinkClick(e, 'hero')} className="text-xl font-bold">
           RIFQI <span className="text-gray-700">PORTFOLIO</span>
         </a>
-
-        {/* Tombol Hamburger */}
         <button className="z-50 text-2xl lg:hidden" onClick={toggleMenu}>
           <i className={`transition-transform duration-300 ease-in-out ${menuOpen ? 'fas fa-times rotate-90' : 'fas fa-bars'}`}></i>
         </button>
-
-        {/* Navigasi Desktop */}
         <nav className="hidden lg:block">
           <ul className="flex space-x-8 font-medium">
-             <li><a href="#hero" className={`relative hover:text-black ${activeLink === 'hero' ? 'text-black' : 'text-gray-700'}`} onClick={(e) => handleLinkClick(e, 'hero')}>HOME{activeLink === 'hero' && <span className="absolute bottom-[-5px] left-0 w-full h-[3px] bg-black"></span>}</a></li>
-             <li><a href="#about" className={`relative hover:text-black ${activeLink === 'about' ? 'text-black' : 'text-gray-700'}`} onClick={(e) => handleLinkClick(e, 'about')}>ABOUT{activeLink === 'about' && <span className="absolute bottom-[-5px] left-0 w-full h-[3px] bg-black"></span>}</a></li>
-             <li><a href="#resume" className={`relative hover:text-black ${activeLink === 'resume' ? 'text-black' : 'text-gray-700'}`} onClick={(e) => handleLinkClick(e, 'resume')}>RESUME{activeLink === 'resume' && <span className="absolute bottom-[-5px] left-0 w-full h-[3px] bg-black"></span>}</a></li>
-             <li><a href="#skills" className={`relative hover:text-black ${activeLink === 'skills' ? 'text-black' : 'text-gray-700'}`} onClick={(e) => handleLinkClick(e, 'skills')}>SKILLS{activeLink === 'skills' && <span className="absolute bottom-[-5px] left-0 w-full h-[3px] bg-black"></span>}</a></li>
-             <li><a href="#projects" className={`relative hover:text-black ${activeLink === 'projects' ? 'text-black' : 'text-gray-700'}`} onClick={(e) => handleLinkClick(e, 'projects')}>PORTFOLIO{activeLink === 'projects' && <span className="absolute bottom-[-5px] left-0 w-full h-[3px] bg-black"></span>}</a></li>
-             <li><a href="#contact" className={`relative hover:text-black ${activeLink === 'contact' ? 'text-black' : 'text-gray-700'}`} onClick={(e) => handleLinkClick(e, 'contact')}>CONTACT{activeLink === 'contact' && <span className="absolute bottom-[-5px] left-0 w-full h-[3px] bg-black"></span>}</a></li>
+            <li><a href="#hero" className={`relative hover:text-black ${activeLink === 'hero' ? 'text-black' : 'text-gray-700'}`} onClick={(e) => handleLinkClick(e, 'hero')}>HOME{activeLink === 'hero' && <span className="absolute bottom-[-5px] left-0 w-full h-[3px] bg-black"></span>}</a></li>
+            <li><a href="#about" className={`relative hover:text-black ${activeLink === 'about' ? 'text-black' : 'text-gray-700'}`} onClick={(e) => handleLinkClick(e, 'about')}>ABOUT{activeLink === 'about' && <span className="absolute bottom-[-5px] left-0 w-full h-[3px] bg-black"></span>}</a></li>
+            <li><a href="#resume" className={`relative hover:text-black ${activeLink === 'resume' ? 'text-black' : 'text-gray-700'}`} onClick={(e) => handleLinkClick(e, 'resume')}>RESUME{activeLink === 'resume' && <span className="absolute bottom-[-5px] left-0 w-full h-[3px] bg-black"></span>}</a></li>
+            <li><a href="#skills" className={`relative hover:text-black ${activeLink === 'skills' ? 'text-black' : 'text-gray-700'}`} onClick={(e) => handleLinkClick(e, 'skills')}>SKILLS{activeLink === 'skills' && <span className="absolute bottom-[-5px] left-0 w-full h-[3px] bg-black"></span>}</a></li>
+            <li><a href="#projects" className={`relative hover:text-black ${activeLink === 'projects' ? 'text-black' : 'text-gray-700'}`} onClick={(e) => handleLinkClick(e, 'projects')}>PORTFOLIO{activeLink === 'projects' && <span className="absolute bottom-[-5px] left-0 w-full h-[3px] bg-black"></span>}</a></li>
+            <li><a href="#contact" className={`relative hover:text-black ${activeLink === 'contact' ? 'text-black' : 'text-gray-700'}`} onClick={(e) => handleLinkClick(e, 'contact')}>CONTACT{activeLink === 'contact' && <span className="absolute bottom-[-5px] left-0 w-full h-[3px] bg-black"></span>}</a></li>
           </ul>
         </nav>
       </div>
-
-      {/* Navigasi Mobile */}
       <nav className={`overflow-hidden backdrop-blur-sm bg-[rgba(255,255,255,0.2)] shadow-md transition-all duration-500 ease-in-out lg:hidden ${menuOpen ? 'max-h-screen' : 'max-h-0'}`}>
         <ul className="flex flex-col items-center space-y-4 py-4 font-medium">
-           <li><a href="#hero" className={`relative pb-2 hover:text-slate-900 ${activeLink === 'hero' ? 'text-slate-900 font-bold' : 'text-slate-600'}`} onClick={(e) => handleLinkClick(e, 'hero')}>HOME{activeLink === 'hero' && <span className="absolute bottom-0 left-0 w-full h-[2px] bg-slate-800"></span>}</a></li>
-           <li><a href="#about" className={`relative pb-2 hover:text-slate-900 ${activeLink === 'about' ? 'text-slate-900 font-bold' : 'text-slate-600'}`} onClick={(e) => handleLinkClick(e, 'about')}>ABOUT{activeLink === 'about' && <span className="absolute bottom-0 left-0 w-full h-[2px] bg-slate-800"></span>}</a></li>
-           <li><a href="#resume" className={`relative pb-2 hover:text-slate-900 ${activeLink === 'resume' ? 'text-slate-900 font-bold' : 'text-slate-600'}`} onClick={(e) => handleLinkClick(e, 'resume')}>RESUME{activeLink === 'resume' && <span className="absolute bottom-0 left-0 w-full h-[2px] bg-slate-800"></span>}</a></li>
-           <li><a href="#skills" className={`relative pb-2 hover:text-slate-900 ${activeLink === 'skills' ? 'text-slate-900 font-bold' : 'text-slate-600'}`} onClick={(e) => handleLinkClick(e, 'skills')}>SKILLS{activeLink === 'skills' && <span className="absolute bottom-0 left-0 w-full h-[2px] bg-slate-800"></span>}</a></li>
-           <li><a href="#projects" className={`relative pb-2 hover:text-slate-900 ${activeLink === 'projects' ? 'text-slate-900 font-bold' : 'text-slate-600'}`} onClick={(e) => handleLinkClick(e, 'projects')}>PORTFOLIO{activeLink === 'projects' && <span className="absolute bottom-0 left-0 w-full h-[2px] bg-slate-800"></span>}</a></li>
-           <li><a href="#contact" className={`relative pb-2 hover:text-slate-900 ${activeLink === 'contact' ? 'text-slate-900 font-bold' : 'text-slate-600'}`} onClick={(e) => handleLinkClick(e, 'contact')}>CONTACT{activeLink === 'contact' && <span className="absolute bottom-0 left-0 w-full h-[2px] bg-slate-800"></span>}</a></li>
+          <li><a href="#hero" className={`relative pb-2 hover:text-slate-900 ${activeLink === 'hero' ? 'text-slate-900 font-bold' : 'text-slate-600'}`} onClick={(e) => handleLinkClick(e, 'hero')}>HOME{activeLink === 'hero' && <span className="absolute bottom-0 left-0 w-full h-[2px] bg-slate-800"></span>}</a></li>
+          <li><a href="#about" className={`relative pb-2 hover:text-slate-900 ${activeLink === 'about' ? 'text-slate-900 font-bold' : 'text-slate-600'}`} onClick={(e) => handleLinkClick(e, 'about')}>ABOUT{activeLink === 'about' && <span className="absolute bottom-0 left-0 w-full h-[2px] bg-slate-800"></span>}</a></li>
+          <li><a href="#resume" className={`relative pb-2 hover:text-slate-900 ${activeLink === 'resume' ? 'text-slate-900 font-bold' : 'text-slate-600'}`} onClick={(e) => handleLinkClick(e, 'resume')}>RESUME{activeLink === 'resume' && <span className="absolute bottom-0 left-0 w-full h-[2px] bg-slate-800"></span>}</a></li>
+          <li><a href="#skills" className={`relative pb-2 hover:text-slate-900 ${activeLink === 'skills' ? 'text-slate-900 font-bold' : 'text-slate-600'}`} onClick={(e) => handleLinkClick(e, 'skills')}>SKILLS{activeLink === 'skills' && <span className="absolute bottom-0 left-0 w-full h-[2px] bg-slate-800"></span>}</a></li>
+          <li><a href="#projects" className={`relative pb-2 hover:text-slate-900 ${activeLink === 'projects' ? 'text-slate-900 font-bold' : 'text-slate-600'}`} onClick={(e) => handleLinkClick(e, 'projects')}>PORTFOLIO{activeLink === 'projects' && <span className="absolute bottom-0 left-0 w-full h-[2px] bg-slate-800"></span>}</a></li>
+          <li><a href="#contact" className={`relative pb-2 hover:text-slate-900 ${activeLink === 'contact' ? 'text-slate-900 font-bold' : 'text-slate-600'}`} onClick={(e) => handleLinkClick(e, 'contact')}>CONTACT{activeLink === 'contact' && <span className="absolute bottom-0 left-0 w-full h-[2px] bg-slate-800"></span>}</a></li>
         </ul>
       </nav>
     </header>

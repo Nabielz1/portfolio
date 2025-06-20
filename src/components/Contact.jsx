@@ -39,9 +39,10 @@ function Contact() {
     >
       <div className="container mx-auto">
         {/* Section Title */}
-        <h2 className="mb-8 text-center text-3xl font-semibold lg:text-left">
-          Contact
-          <span className="mx-auto mt-2 block h-1 w-20 bg-black lg:mx-0"></span>
+        <h2 className="mb-12 text-center text-3xl font-semibold lg:text-left">
+          <span className="inline-block border-b-4 border-black pb-1">
+            Contact
+          </span>
         </h2>
         
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-2">

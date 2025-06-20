@@ -40,7 +40,11 @@ function Skills() {
     <section id="skills" className="py-32 px-4 md:px-16 lg:px-24 bg-white relative">
       <div className="w-[100px] h-[100px] bg-violet-100 rounded-full absolute top-6 left-[42%] translate-x-1/2 filter blur-3xl opacity-20">
       </div>
-      <h2 className="text-3xl font-semibold mb-10 border-b-4 pb-2 max-w-fit mx-auto lg:mx-0">Skills</h2>
+      <h2 className="mb-12 text-center text-3xl font-semibold lg:text-left">
+          <span className="inline-block border-b-4 border-black pb-1">
+            Skills
+          </span>
+      </h2>
           
       <div className="w-full mt-8">
         <Marquee

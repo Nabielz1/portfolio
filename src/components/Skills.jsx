@@ -3,34 +3,34 @@ import Marquee from "react-fast-marquee";
 
 function Skills() {
   const skillsData = [
-    'Adobe After Effect',
+    'After Effect',
     'Canva',
     'CSS',
     'Figma',
     'Javascript',
-    'Microsoft Office',
     'MongoDB',
     'MySQL',
     'PHP',
     'PostgreSQL',
     'Python',
-    'React',
+    'React Js',
+    'Tailwind CSS'
   ];
 
   const skillsImage = (skill) => {
     const skillassets = {
-      'Adobe After Effect': { src: '/assets/after-effects.svg' },
+      'After Effect': { src: '/assets/after-effects.svg' },
       'Canva': { src: '/assets/canva.svg' },
       'CSS': { src: '/assets/css.svg' },
       'Figma': { src: '/assets/figma.svg' },
       'Javascript': { src: '/assets/javascript.svg' },
-      'Microsoft Office': { src: '/assets/microsoftoffice.svg' },
       'MongoDB': { src: '/assets/mongoDB.svg' },
       'MySQL': { src: '/assets/mysql.svg' },
       'PHP': { src: '/assets/php.svg' },
       'PostgreSQL': { src: '/assets/postgresql.svg' },
       'Python': { src: '/assets/python.svg' },
-      'React': { src: '/assets/react.svg' },
+      'React Js': { src: '/assets/react.svg' },
+      'Tailwind CSS': { src: '/assets/tailwind.svg' },
     };
 
     return skillassets[skill];

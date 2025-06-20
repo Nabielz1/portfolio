@@ -36,42 +36,27 @@ function Hero() {
   }, []);
 
   return (
-    <section className="flex items-center justify-between min-h-screen py-48 px-48 relative overflow-hidden">
+    <section id="hero" className="flex items-center justify-between min-h-screen py-48 px-48 relative overflow-hidden">
       {/* Vanta background div */}
       <div ref={vantaRef} className="fixed inset-0 -z-10"></div>{" "}
       {/* Attach the ref here */}
       <div className="max-w-2xl flex flex-col justify-center z-10 text-white">
-        <h1 className="text-5xl font-semibold mb-4">Hi, I'm</h1>
-        <h1 className="text-5xl font-semibold mb-8">Rifqi Nabil Akbar</h1>
+        <h1 className="text-6xl font-semibold mb-4">Hi, I'm</h1>
+        <h1 className="text-6xl font-semibold mb-6">Rifqi Nabil Akbar</h1>
 
-        <p className="text-gray-200 text-justify">
-          Welcome to my professional portfolio. My name is Rifqi Nabil Akbar, a
-          third-year Information Systems student at Satya Wacana Christian
-          University with a strong interest in technology, software
-          development, system design, business analysis, and data analysis.
-          Passionate about learning and applying concepts that bridge technology
-          and business, I aim to create innovative and effective solutions that
-          add real value. Throughout my journey, I have gained hands-on
-          experience in designing intuitive systems, analyzing data, and
-          collaborating with teams to drive impactful solutions.
-        </p>
-        <p className="text-gray-200 text-justify mt-4">
-          With a commitment to excellence and continuous learning, I am focused
-          on delivering meaningful contributions to the tech industry by
-          leveraging data-driven insights and problem-solving techniques. My
-          journey is just beginning, and I look forward to exploring new
-          opportunities that challenge my skills and expand my knowledge.
+        <p className="text-gray-200 text-justify text-lg">
+          Welcome to my professional portfolio website. This site showcases my work and projects, highlighting my skills in software development, data analysis, and system design. Explore my projects, learn more about my background, and feel free to get in touch!
         </p>
         <div className="flex space-x-4 py-6">
           <a
             href="#contact"
-            className="px-6 py-2 bg-black text-white rounded hover:bg-gray-800"
+            className="px-6 py-2 bg-white text-black rounded hover:bg-gray-300"
           >
             Contact Me
           </a>
           <a
             href="#projects"
-            className="px-6 py-2 border-2 border-gray-800 text-gray-800 rounded hover:bg-gray-100"
+            className="px-6 py-2 border-2 border-white text-white rounded hover:bg-gray-500"
           >
             My Portfolio
           </a>
@@ -104,7 +89,12 @@ function Hero() {
         </div>
       </div>
       <div className="max-w-md z-10">
-        <img src={heroImage} alt="Portfolio Hero" className="w-full h-auto" />
+        {/* Adjusting the hero image */}
+        <img
+          src={heroImage}
+          alt="Portfolio Hero"
+          className="w-[400px] h-[400px] rounded-full border-4 border-white object-cover object-top"
+        />
       </div>
     </section>
   );

@@ -19,11 +19,23 @@ function Resume() {
                 </p>
               </div>
               <h4 className="text-lg font-semibold text-gray-900">
-                Undergraduate in Information System
+                Undergraduate in Information Systems
               </h4>
               <p className="text-gray-600">Satya Wacana Christian University</p>
               <p className="text-gray-600">6th semester student</p>
               <p className="text-gray-600">Current GPA: 3.87/4.00</p>
+            </div>
+            <div className="flex flex-col space-y-2 mt-4">
+              <div className="flex items-center space-x-4">
+                <div className="w-2 h-2 rounded-full bg-black"></div>
+                <p className="text-gray-800 font-semibold">
+                  2019 - 2022 
+                </p>
+              </div>
+              <h4 className="text-lg font-semibold text-gray-900">
+                Mathematics and Natural Sciences
+              </h4>
+              <p className="text-gray-600">SMA Negeri 3 Salatiga</p>
             </div>
           </div>
         </div>
@@ -37,23 +49,16 @@ function Resume() {
               <div className="flex items-center space-x-4">
                 <div className="w-2 h-2 rounded-full bg-black"></div>
                 <p className="text-gray-800 font-semibold">
-                  Aug 2023 - Present
+                  Maret 2025 - July 2025
                 </p>
               </div>
               <h4 className="text-lg font-semibold text-gray-900">
-                Assistant Lecturer
+                Web Developer Intern
               </h4>
-              <p className="text-gray-600">Satya Wacana Christian University</p>
-              <p className="text-gray-600">
-                Taught the students of Informatics Engineering at Faculty of
-                Technology and Information UKSW to solve problems and reported
-                the results to the lecturer for each semester.
-              </p>
-
+              <p className="text-gray-600">Dr. Oen Solo Baru Hospital</p>
               <ul className="list-disc ml-6 text-gray-600">
-                <li>Assistant Lecturer Of Operating System (Mar 2025 - Present)</li>
-                <li>Assistant Lecturer Of Network Programming Basics (Aug 2024 - Dec 2024)</li>
-                <li>Assistant Lecturer Of Computer Network (Mar 2024 - Jul 2024)</li>
+                <li>Contributed to developing a web-based E-Logbook system using Laravel 11, Tailwind CSS, and PostgreSQL to evaluate nurses clinical competency, with a focus on intuitive UI/UX for medical staff.</li>
+                <li>Implemented secure session-based authentication with Laravel Breeze, structured the database using migrations and seeders, and built validation logic for accurate clinical entry tracking and point calculation.</li>
               </ul>
             </div>
           </div>

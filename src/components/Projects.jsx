@@ -7,12 +7,11 @@ function Projects() {
       description: "This project showcases the Gigsy Jobseeker Mobile App, developed for the UI/UX competition at INSPACE ITK 2024 and it successfully became a finalist in the competition. The app is designed to help jobseekers find the right opportunities.",
       image: "/assets/Mockup-Gigsy.png",
       tech: ["Figma", "UI/UX Design"],
-      // --- KUNCI DIUBAH DI SINI ---
       figma: "https://www.figma.com/proto/LXgjKiVnDbWYRkfFiNZ3tz/GIGSY?node-id=27-3132&p=f&t=vyArEkvt6aYTU6Ie-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=27%3A3109"
     },
     {
       title: "Mindfulness Mobile App",
-      description: "This project showcases the Improve It Mindfulness Mobile App, developed for the ISFEST UKSW 2024 competition. The app focuses on mindfulness and well-being, offering features like mood tracking, sleep quality monitoring, and meditation sessions. ",
+      description: "This project showcases the Improve It Mindfulness Mobile App, developed for the ISFEST UKSW 2024 competition. The app focuses on mindfulness and well-being, offering features like mood tracking, sleep quality monitoring, and meditation sessions.",
       image: "/assets/Mockup-improve.png",
       tech: ["Figma", "UI/UX Design"],
       figma: "https://www.figma.com/proto/uhcJAZFMkiUKxKehondm7B/ISFEST-2024?node-id=10-41&p=f&t=MdK7ersZ6OmhsI5Z-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=10%3A448"
@@ -27,34 +26,47 @@ function Projects() {
   ];
 
   return (
-    <section id="projects" className="py-20 px-48 bg-white">
-      <h2 className="text-3xl font-semibold mb-6 border-b-4 max-w-fit">Portfolio</h2>
-      <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-        {projects.map((project, index) => (
-          <div key={index} className="bg-white shadow-md rounded-lg overflow-hidden transition-transform transform hover:scale-105 relative flex flex-col">
-            <img src={project.image} alt={project.title} className="w-full h-48 object-cover" />
-            <div className="p-4 flex-1 flex flex-col">
-              <h3 className="text-lg font-semibold mb-2">{project.title}</h3>
-              <p className="text-gray-600 mb-4 text-sm flex-1 text-justify">{project.description}</p>
-              <div className="flex gap-2 mb-4">
-                {project.tech.map((tech, idx) => (
-                  <span key={idx} className="bg-gray-200 text-gray-900 py-1 px-3 rounded-full text-xs mb-6">{tech}</span>
-                ))}
-              </div>
-              <div className="mt-4">
-                 {/* --- LOGIKA JSX DISESUAIKAN DI SINI --- */}
-                <a 
-                  href={project.figma || project.github} // Gunakan link figma jika ada, jika tidak, gunakan link github
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="text-white bg-gray-800 rounded-sm px-4 py-2 hover:underline absolute bottom-4 right-4 mt-4"
-                >
-                  {project.figma ? 'Figma' : 'GitHub'} {/* Tampilkan teks berdasarkan kunci yang ada */}
-                </a>
+    // --- PERBAIKAN 1: Padding yang responsif ---
+    <section 
+      id="projects" 
+      className="px-6 py-16 sm:px-12 lg:px-24 lg:py-20"
+    >
+      {/* Kontainer untuk membatasi lebar di layar besar */}
+      <div className="container mx-auto">
+        {/* --- PERBAIKAN 2: Judul yang konsisten dan responsif --- */}
+        <h2 className="mb-12 text-center text-3xl font-semibold lg:text-left">
+          <span className="inline-block border-b-4 border-black pb-1">
+            Portfolio
+          </span>
+        </h2>
+        
+        {/* Grid proyek Anda sudah sangat bagus dan responsif, tidak perlu diubah! */}
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          {projects.map((project, index) => (
+            <div key={index} className="flex transform flex-col overflow-hidden rounded-lg bg-white shadow-lg transition-transform hover:scale-105">
+              <img src={project.image} alt={project.title} className="h-52 w-full object-cover" />
+              <div className="flex flex-1 flex-col p-6">
+                <h3 className="mb-2 text-xl font-bold">{project.title}</h3>
+                <p className="flex-1 text-justify text-sm text-gray-600">{project.description}</p>
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {project.tech.map((tech, idx) => (
+                    <span key={idx} className="rounded-full bg-gray-200 px-3 py-1 text-xs font-semibold text-gray-800">{tech}</span>
+                  ))}
+                </div>
+                <div className="mt-6 pt-4">
+                   <a 
+                     href={project.figma || project.github}
+                     target="_blank" 
+                     rel="noopener noreferrer" 
+                     className="inline-block rounded-md bg-gray-800 px-4 py-2 text-sm text-white transition hover:bg-gray-950"
+                   >
+                    {project.figma ? 'Figma' : 'GitHub'}
+                   </a>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   );

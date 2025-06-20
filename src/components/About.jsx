@@ -2,22 +2,17 @@ import "../App.css"; // Import Tailwind CSS styles
 
 function About() {
   return (
-    // --- PERUBAHAN UTAMA UNTUK RESPONSIVE ---
-    // Padding diubah dari px-48 menjadi fleksibel untuk berbagai ukuran layar
+    // responsive section for about
     <section 
       id="about" 
       className="bg-white px-6 py-16 sm:px-12 lg:px-24 lg:py-20"
     >
-      {/* Kontainer untuk membatasi lebar konten di layar besar dan menengahkan */}
       <div className="container mx-auto">
-        {/* Judul Section dibuat responsif (tengah di mobile, kiri di desktop) */}
         <h2 className="mb-8 text-center text-3xl font-semibold lg:text-left">
           About
-          {/* Garis bawah dekoratif yang mengikuti perataan teks */}
           <span className="mx-auto mt-2 block h-1 w-20 bg-black lg:mx-0"></span>
         </h2>
-        
-        {/* Ukuran font paragraf juga dibuat responsif */}
+        {/* Deskripsi tentang diri Anda */}
         <p className="text-base text-gray-700 text-justify md:text-lg">
           I am an enthusiastic, well-organized, and deeply inquisitive third-year Information Systems student at Satya Wacana Christian University, with a strong passion for technology, software development, system design, business analysis, and data analysis. Skilled in adapting to new environments, collaborating in teams, and communicating technical ideas effectively, I am passionate about bridging technology and business. My hands-on experience in designing intuitive systems, analyzing data, and collaborating with teams to drive impactful solutions fuels my desire to create innovative and effective solutions that add real value. Eager to deepen my knowledge and gain practical experience in areas such as software development, data analysis, and system design, I am committed to excellence and continuous learning. My journey is just beginning, and I look forward to exploring new opportunities that challenge my skills and expand my knowledge.
         </p>

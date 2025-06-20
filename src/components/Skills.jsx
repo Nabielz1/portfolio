@@ -36,8 +36,7 @@ function Skills() {
   };
 
   return (
-    // --- PERUBAHAN 1: `div` diubah menjadi `section`
-    // --- PERUBAHAN 2: `py-20` diubah menjadi `py-32`
+    // responsive section for skills
     <section id="skills" className="py-32 px-4 md:px-16 lg:px-24 bg-white relative">
       <div className="w-[100px] h-[100px] bg-violet-100 rounded-full absolute top-6 left-[42%] translate-x-1/2 filter blur-3xl opacity-20">
       </div>

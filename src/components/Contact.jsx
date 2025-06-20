@@ -32,13 +32,13 @@ function Contact() {
   };
 
   return (
-    // --- PERBAIKAN 1: Padding responsif ---
+    // responsive section for contact
     <section 
       id="contact" 
       className="bg-white px-6 py-16 sm:px-12 md:px-24 lg:py-20"
     >
       <div className="container mx-auto">
-        {/* Judul Section yang Responsif */}
+        {/* Section Title */}
         <h2 className="mb-8 text-center text-3xl font-semibold lg:text-left">
           Contact
           <span className="mx-auto mt-2 block h-1 w-20 bg-black lg:mx-0"></span>
@@ -46,14 +46,13 @@ function Contact() {
         
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-2">
           
-          {/* Kolom Informasi Kontak */}
+          {/* Contact */}
           <div className="flex flex-col gap-8">
             {/* Email Section */}
             <div className="flex items-start gap-4">
               <i className="fas fa-envelope mt-1 w-6 text-center text-2xl text-gray-600"></i>
               <div>
                 <h3 className="text-xl font-semibold">Email</h3>
-                {/* --- PERBAIKAN 2: Email anti-overflow --- */}
                 <p className="break-all text-gray-600">
                   rifqiiakbar12@gmail.com
                 </p>
@@ -73,7 +72,6 @@ function Contact() {
 
           {/* Kolom Form */}
           <div>
-            {/* --- PERBAIKAN 3: Pesan konfirmasi menggantikan alert() --- */}
             {isSubmitted && (
               <div className="mb-4 rounded-md bg-green-100 p-3 text-center text-green-800">
                 Your message has been sent successfully!

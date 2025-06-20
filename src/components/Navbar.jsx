@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import '../App.css'; // Pastikan file CSS Anda diimpor
+import '../App.css'; // Import Tailwind CSS styles
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -66,10 +66,8 @@ function Navbar() {
 
 
   return (
+    // responsive header component
     <header className="fixed top-0 w-full z-50 bg-[rgba(255,255,255,0.5)] backdrop-blur-sm shadow-md">
-      
-      {/* --- INI DIA PERBAIKANNYA --- */}
-      {/* Menghapus 'container' dan menggunakan pola yang lebih aman */}
       <div className="mx-auto flex w-full max-w-screen-lg items-center justify-between px-6 py-4">
         {/* Logo */}
         <a href="#hero" onClick={(e) => handleLinkClick(e, 'hero')} className="text-xl font-bold">
@@ -94,7 +92,7 @@ function Navbar() {
         </nav>
       </div>
 
-      {/* Navigasi Mobile (Tidak ada perubahan) */}
+      {/* Navigasi Mobile */}
       <nav className={`overflow-hidden backdrop-blur-sm bg-[rgba(255,255,255,0.2)] shadow-md transition-all duration-500 ease-in-out lg:hidden ${menuOpen ? 'max-h-screen' : 'max-h-0'}`}>
         <ul className="flex flex-col items-center space-y-4 py-4 font-medium">
            <li><a href="#hero" className={`relative pb-2 hover:text-slate-900 ${activeLink === 'hero' ? 'text-slate-900 font-bold' : 'text-slate-600'}`} onClick={(e) => handleLinkClick(e, 'hero')}>HOME{activeLink === 'hero' && <span className="absolute bottom-0 left-0 w-full h-[2px] bg-slate-800"></span>}</a></li>

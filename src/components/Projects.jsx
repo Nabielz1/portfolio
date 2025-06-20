@@ -26,21 +26,19 @@ function Projects() {
   ];
 
   return (
-    // --- PERBAIKAN 1: Padding yang responsif ---
+    // responsive section for projects
     <section 
       id="projects" 
       className="px-6 py-16 sm:px-12 lg:px-24 lg:py-20"
     >
-      {/* Kontainer untuk membatasi lebar di layar besar */}
       <div className="container mx-auto">
-        {/* --- PERBAIKAN 2: Judul yang konsisten dan responsif --- */}
+      {/* Title for the Projects section */}
         <h2 className="mb-12 text-center text-3xl font-semibold lg:text-left">
           <span className="inline-block border-b-4 border-black pb-1">
             Portfolio
           </span>
         </h2>
-        
-        {/* Grid proyek Anda sudah sangat bagus dan responsif, tidak perlu diubah! */}
+        {/* Grid layout for projects */}
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {projects.map((project, index) => (
             <div key={index} className="flex transform flex-col overflow-hidden rounded-lg bg-white shadow-lg transition-transform hover:scale-105">

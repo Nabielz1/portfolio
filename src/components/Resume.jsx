@@ -2,28 +2,27 @@ import "../App.css"; // Import Tailwind CSS styles
 
 function Resume() {
   return (
-    // --- PERBAIKAN 1: Padding yang responsif ---
+    // responsive section for resume
     <section 
       id="resume" 
       className="bg-white px-6 py-16 sm:px-12 lg:px-24 lg:py-20"
     >
-      {/* Kontainer untuk membatasi lebar di layar besar */}
+      {/* Section Title */}
       <div className="container mx-auto">
-        {/* --- PERBAIKAN 2: Judul yang konsisten dan responsif --- */}
         <h2 className="mb-12 text-center text-3xl font-semibold lg:text-left">
           <span className="inline-block border-b-4 border-black pb-1">
             Resume
           </span>
         </h2>
 
-        {/* Grid sudah responsif, kita hanya perlu memastikan padding induknya benar */}
+        {/* Grid layout for resume sections */}
         <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:gap-16">
           
-          {/* Kolom Edukasi */}
+          {/* Resume Section 1 */}
           <div className="space-y-6">
             <h3 className="text-2xl font-semibold text-gray-800">Education</h3>
             <div className="relative border-l-2 border-gray-300 pl-6">
-              {/* Entri 1: Universitas */}
+              {/* Education details */}
               <div className="mb-8 flex flex-col">
                 <div className="absolute -left-[7px] mt-1 h-3 w-3 rounded-full bg-gray-800"></div>
                 <p className="text-sm font-semibold text-gray-700">
@@ -38,7 +37,7 @@ function Resume() {
                 <p className="text-sm text-gray-500">Current GPA: 3.87 / 4.00</p>
               </div>
               
-              {/* Entri 2: SMA */}
+              {/* Education details */}
               <div className="flex flex-col">
                 <div className="absolute -left-[7px] mt-1 h-3 w-3 rounded-full bg-gray-800"></div>
                 <p className="text-sm font-semibold text-gray-700">
@@ -52,11 +51,11 @@ function Resume() {
             </div>
           </div>
 
-          {/* Kolom Pengalaman */}
+          {/* Resume Section 2 */}
           <div className="space-y-6">
             <h3 className="text-2xl font-semibold text-gray-800">Experience</h3>
             <div className="relative border-l-2 border-gray-300 pl-6">
-              {/* Entri 1: Magang */}
+              {/* Experience details */}
               <div className="flex flex-col">
                 <div className="absolute -left-[7px] mt-1 h-3 w-3 rounded-full bg-gray-800"></div>
                 <p className="text-sm font-semibold text-gray-700">

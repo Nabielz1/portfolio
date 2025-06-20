@@ -1,4 +1,4 @@
-import "../App.css"; // Import Tailwind CSS styles
+import "../App.css";
 import Marquee from "react-fast-marquee";
 
 function Skills() {
@@ -32,17 +32,18 @@ function Skills() {
       'React Js': { src: '/assets/react.svg' },
       'Tailwind CSS': { src: '/assets/tailwind.svg' },
     };
-
     return skillassets[skill];
   };
 
   return (
-    <div id="skills" className="py-20 px-48 bg-white">
+    // --- PERUBAHAN 1: `div` diubah menjadi `section`
+    // --- PERUBAHAN 2: `py-20` diubah menjadi `py-32`
+    <section id="skills" className="py-32 px-4 md:px-16 lg:px-24 bg-white relative">
       <div className="w-[100px] h-[100px] bg-violet-100 rounded-full absolute top-6 left-[42%] translate-x-1/2 filter blur-3xl opacity-20">
       </div>
-          <h2 className="text-3xl font-semibold mb-6 border-b-4 pb-2 max-w-fit">Skills</h2>
+      <h2 className="text-3xl font-semibold mb-10 border-b-4 pb-2 max-w-fit mx-auto lg:mx-0">Skills</h2>
           
-      <div className="w-full">
+      <div className="w-full mt-8">
         <Marquee
           gradient={false}
           speed={80}
@@ -79,7 +80,7 @@ function Skills() {
           })}
         </Marquee>
       </div>
-    </div>
+    </section>
   );
 }
 

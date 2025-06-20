@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react'; // 1. Import useEffect
 import '../App.css'; // Pastikan file CSS Anda diimpor
 
 function Navbar() {
@@ -7,30 +7,68 @@ function Navbar() {
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
 
-  // Modifikasi fungsi handleLinkClick untuk menangani smooth scroll
   const handleLinkClick = (e, link) => {
-    // 1. Mencegah perilaku default tautan untuk melompat langsung
     e.preventDefault();
-
-    // 2. Tetap perbarui state untuk tautan aktif
     setActiveLink(link);
-
-    // 3. Dapatkan ID target dari atribut href
     const targetId = e.currentTarget.getAttribute('href');
     const targetElement = document.querySelector(targetId);
-
-    // 4. Lakukan smooth scroll jika elemen target ditemukan
     if (targetElement) {
       const offsetTop = targetElement.offsetTop;
-      // Kurangi dengan tinggi navbar Anda (misalnya, 80px)
-      const headerOffset = 80; 
-
+      const headerOffset = 80;
       window.scrollTo({
         top: offsetTop - headerOffset,
         behavior: 'smooth'
       });
     }
   };
+
+  // --- LOGIKA BARU DIMULAI DI SINI ---
+
+  // Di dalam file Navbar.jsx
+
+  useEffect(() => {
+    const sections = document.querySelectorAll('section[id]');
+
+    const handleScroll = () => {
+      let currentSectionId = '';
+      
+      // Tentukan titik pemicu di viewport (misalnya, 150px dari atas)
+      const triggerPoint = 150; 
+
+      sections.forEach(section => {
+        // Cek apakah bagian atas section sudah melewati titik pemicu
+        if (window.scrollY >= section.offsetTop - triggerPoint) {
+          currentSectionId = section.getAttribute('id');
+        }
+      });
+
+      // Update state HANYA jika ID section berubah
+      if (currentSectionId && currentSectionId !== activeLink) {
+        setActiveLink(currentSectionId);
+      }
+      
+      // Logika untuk animasi reveal tetap sama
+      const reveals = document.querySelectorAll('.reveal');
+      reveals.forEach(element => {
+          const windowHeight = window.innerHeight;
+          const elementTop = element.getBoundingClientRect().top;
+          const revealPoint = 150;
+
+          if (elementTop < windowHeight - revealPoint) {
+              element.classList.add('active');
+          }
+      });
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    // Cleanup
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [activeLink]); // Dependency array tetap
+
+  // --- LOGIKA BARU BERAKHIR DI SINI ---
 
   return (
     <header className="fixed w-full top-0 backdrop-blur-sm bg-[rgba(255,255,255,0.5)] shadow-md z-50 py-4">
@@ -43,63 +81,39 @@ function Navbar() {
         </button>
         <nav className={`${menuOpen ? 'block' : 'hidden'} lg:block`}>
           <ul className="flex space-x-8 font-medium">
-            {/* Perbarui setiap onClick untuk meneruskan event (e) */}
+            {/* Tautan navigasi tidak perlu diubah, karena sudah reaktif terhadap state `activeLink` */}
             <li>
-              <a
-                href="#hero"
-                className={`relative hover:text-black ${activeLink === 'home' ? 'text-black' : 'text-gray-700'}`}
-                onClick={(e) => handleLinkClick(e, 'home')}
-              >
+              <a href="#hero" className={`relative hover:text-black ${activeLink === 'hero' ? 'text-black' : 'text-gray-700'}`} onClick={(e) => handleLinkClick(e, 'hero')}>
                 HOME
-                {activeLink === 'home' && <span className="absolute bottom-[-5px] left-0 w-full h-[3px] bg-black"></span>}
+                {activeLink === 'hero' && <span className="absolute bottom-[-5px] left-0 w-full h-[3px] bg-black"></span>}
               </a>
             </li>
             <li>
-              <a
-                href="#about"
-                className={`relative hover:text-black ${activeLink === 'about' ? 'text-black' : 'text-gray-700'}`}
-                onClick={(e) => handleLinkClick(e, 'about')}
-              >
+              <a href="#about" className={`relative hover:text-black ${activeLink === 'about' ? 'text-black' : 'text-gray-700'}`} onClick={(e) => handleLinkClick(e, 'about')}>
                 ABOUT
                 {activeLink === 'about' && <span className="absolute bottom-[-5px] left-0 w-full h-[3px] bg-black"></span>}
               </a>
             </li>
             <li>
-              <a
-                href="#resume"
-                className={`relative hover:text-black ${activeLink === 'resume' ? 'text-black' : 'text-gray-700'}`}
-                onClick={(e) => handleLinkClick(e, 'resume')}
-              >
+              <a href="#resume" className={`relative hover:text-black ${activeLink === 'resume' ? 'text-black' : 'text-gray-700'}`} onClick={(e) => handleLinkClick(e, 'resume')}>
                 RESUME
                 {activeLink === 'resume' && <span className="absolute bottom-[-5px] left-0 w-full h-[3px] bg-black"></span>}
               </a>
             </li>
             <li>
-              <a
-                href="#skills"
-                className={`relative hover:text-black ${activeLink === 'skills' ? 'text-black' : 'text-gray-700'}`}
-                onClick={(e) => handleLinkClick(e, 'skills')}
-              >
+              <a href="#skills" className={`relative hover:text-black ${activeLink === 'skills' ? 'text-black' : 'text-gray-700'}`} onClick={(e) => handleLinkClick(e, 'skills')}>
                 SKILLS
                 {activeLink === 'skills' && <span className="absolute bottom-[-5px] left-0 w-full h-[3px] bg-black"></span>}
               </a>
             </li>
             <li>
-              <a
-                href="#projects"
-                className={`relative hover:text-black ${activeLink === 'projects' ? 'text-black' : 'text-gray-700'}`}
-                onClick={(e) => handleLinkClick(e, 'projects')}
-              >
+              <a href="#projects" className={`relative hover:text-black ${activeLink === 'projects' ? 'text-black' : 'text-gray-700'}`} onClick={(e) => handleLinkClick(e, 'projects')}>
                 PORTFOLIO
                 {activeLink === 'projects' && <span className="absolute bottom-[-5px] left-0 w-full h-[3px] bg-black"></span>}
               </a>
             </li>
             <li>
-              <a
-                href="#contact"
-                className={`relative hover:text-black ${activeLink === 'contact' ? 'text-black' : 'text-gray-700'}`}
-                onClick={(e) => handleLinkClick(e, 'contact')}
-              >
+              <a href="#contact" className={`relative hover:text-black ${activeLink === 'contact' ? 'text-black' : 'text-gray-700'}`} onClick={(e) => handleLinkClick(e, 'contact')}>
                 CONTACT
                 {activeLink === 'contact' && <span className="absolute bottom-[-5px] left-0 w-full h-[3px] bg-black"></span>}
               </a>

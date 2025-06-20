@@ -16,7 +16,6 @@ function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Simulate form submission logic (e.g., call API, show a confirmation)
     console.log("Form data submitted:", formData);
     alert("Your message has been sent!");
   };
@@ -25,18 +24,26 @@ function Contact() {
     <section id="contact" className="py-20 px-48 bg-white">
       <h2 className="text-3xl font-semibold mb-6 border-b-4 max-w-fit">Contact</h2>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        {/* --- PERUBAHAN DIMULAI DARI SINI --- */}
         <div>
-          <div className="mb-6">
+          {/* Email Section */}
+          <div className="mb-6 flex items-center gap-4">
             <i className="fas fa-envelope text-2xl text-gray-600"></i>
-            <h3 className="text-xl font-semibold">Email</h3>
-            <p className="text-gray-600">rifqiiakbar12@gmail.com</p>
+            <div>
+              <h3 className="text-xl font-semibold">Email</h3>
+              <p className="text-gray-600">rifqiiakbar12@gmail.com</p>
+            </div>
           </div>
-          <div>
+          {/* Location Section */}
+          <div className="flex items-center gap-4">
             <i className="fas fa-map-marker-alt text-2xl text-gray-600"></i>
-            <h3 className="text-xl font-semibold">Location</h3>
-            <p className="text-gray-600">Salatiga, Jawa Tengah, Indonesia</p>
+            <div>
+              <h3 className="text-xl font-semibold">Location</h3>
+              <p className="text-gray-600">Salatiga, Jawa Tengah, Indonesia</p>
+            </div>
           </div>
         </div>
+        {/* --- PERUBAHAN BERAKHIR DI SINI --- */}
 
         <div>
           <form onSubmit={handleSubmit} className="space-y-4">

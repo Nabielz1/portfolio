@@ -38,18 +38,18 @@ function Hero() {
     <section id="hero" className="relative flex min-h-screen items-center justify-center overflow-x-hidden px-6">
       {/* Vanta.js background effect */}
       <div ref={vantaRef} className="absolute inset-0 -z-10"></div>
-      {/* Main content responsive */}
-      <div className="container mx-auto flex w-full flex-col-reverse items-center justify-center gap-12 px-6 pt-32 pb-16 text-white lg:flex-row lg:justify-between lg:gap-0 lg:pt-24 lg:pb-24">
-      {/* Hero text and buttons */}
-        <div className="z-10 flex lg:max-w-3xl flex-col items-center text-center lg:items-start lg:text-left">
-          <h1 className="mb-4 text-4xl font-semibold md:text-5xl lg:text-6xl">Hi, I'm</h1>
-          <h1 className="mb-6 text-4xl font-semibold md:text-5xl lg:text-6xl">Rifqi Nabil Akbar</h1>
-          <p className="mb-6 text-base text-gray-200 md:text-lg text-justify">
+      {/* Main content responsive - lg:gap-0 diubah menjadi lg:gap-12 */}
+      <div className="container mx-auto flex w-full flex-col-reverse items-center justify-center gap-12 pt-32 pb-16 text-white lg:flex-row lg:justify-between lg:gap-12 lg:pt-24 lg:pb-24">
+        {/* Hero text and buttons */}
+        <div className="z-10 flex lg:max-w-4xl flex-col items-center text-center lg:items-start lg:text-left">
+          <h1 className="mb-4 text-3xl font-semibold md:text-5xl lg:text-6xl">Hi, I'm</h1>
+          <h1 className="mb-6 text-3xl font-semibold md:text-5xl lg:text-6xl">Rifqi Nabil Akbar</h1>
+          <p className="mb-6 text-base text-gray-200 md:text-md lg:text-lg text-justify">
             Welcome to my professional portfolio website. This site showcases my work and projects, highlighting my skills in software development, data analysis, and system design. Explore my projects, learn more about my background, and feel free to get in touch!
           </p>
           <div className="mb-6 flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4">
             <a href="#contact" className="rounded bg-white px-6 py-3 text-black transition hover:bg-gray-300">Contact Me</a>
-            <a href="#projects" className="rounded border-2 border-white px-6 py-3 text-white transition hover:bg-white hover:bg-opacity-20">My Portfolio</a>
+            <a href="#projects" className="rounded border-2 border-white px-6 py-3 text-white transition hover:bg-white hover:bg-opacity-20 hover:text-black">My Portfolio</a>
           </div>
           {/* Social media links */}
           <div className="flex space-x-6">

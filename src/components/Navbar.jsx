@@ -1,5 +1,3 @@
-// Navbar.jsx (Versi Perbaikan dengan "Saklar")
-
 import React, { useState, useEffect } from 'react';
 import '../App.css'; // Import Tailwind CSS styles
 
@@ -7,7 +5,6 @@ function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeLink, setActiveLink] = useState('hero');
   
-  // [PERUBAHAN 1]: Tambahkan state baru sebagai "saklar"
   const [isClickScrolling, setIsClickScrolling] = useState(false);
 
   const toggleMenu = () => setMenuOpen(!menuOpen);

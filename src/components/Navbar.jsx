@@ -15,10 +15,9 @@ function Navbar() {
   const handleLinkClick = (e, link) => {
     e.preventDefault();
     
-    // [PERUBAHAN 2]: "Nyalakan" saklar sebelum scroll dimulai
     setIsClickScrolling(true);
     
-    setActiveLink(link); // Langsung set link aktif agar UI terasa instan
+    setActiveLink(link); 
 
     if (menuOpen) {
       setMenuOpen(false);
@@ -35,13 +34,10 @@ function Navbar() {
         behavior: 'smooth'
       });
       
-      // [PERUBAHAN 3]: "Matikan" saklar setelah scroll selesai
-      // Durasi timeout harus cukup untuk animasi 'smooth' selesai (sekitar 800ms sudah aman)
       setTimeout(() => {
         setIsClickScrolling(false);
       }, 800);
     } else {
-        // Jika target tidak ada, langsung matikan saklar
         setIsClickScrolling(false);
     }
   };
@@ -50,7 +46,6 @@ function Navbar() {
     const sections = document.querySelectorAll('section[id]');
     
     const handleScroll = () => {
-      // [PERUBAHAN 4]: Jika saklar menyala (karena klik), hentikan fungsi ini
       if (isClickScrolling) {
         return; 
       }
@@ -70,7 +65,6 @@ function Navbar() {
         setActiveLink(currentSectionId);
       }
       
-      // Bagian untuk animasi .reveal tetap sama
       const reveals = document.querySelectorAll('.reveal');
       reveals.forEach(element => {
           const windowHeight = window.innerHeight;
@@ -87,15 +81,12 @@ function Navbar() {
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, [activeLink, isClickScrolling]); // Tambahkan isClickScrolling ke dependency array
+  }, [activeLink, isClickScrolling]); 
 
 
   return (
-    // ... JSX Anda di sini tidak ada yang berubah sama sekali ...
-    // ... Cukup salin-tempel dari kode lama Anda ...
-    
     <header className="fixed top-0 w-full z-50 bg-[rgba(255,255,255,0.5)] backdrop-blur-sm shadow-md">
-      <div className="mx-auto flex w-full max-w-screen-lg items-center justify-between px-6 py-4">
+      <div className="container mx-auto flex items-center justify-between px-6 py-4">
         <a href="#hero" onClick={(e) => handleLinkClick(e, 'hero')} className="text-xl font-bold">
           RIFQI <span className="text-gray-700">PORTFOLIO</span>
         </a>

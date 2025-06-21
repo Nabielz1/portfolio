@@ -38,53 +38,47 @@ function Skills() {
   return (
     // responsive section for skills
     <section id="skills" className="py-32 px-4 md:px-16 lg:px-24 bg-white relative">
-      <div className="w-[100px] h-[100px] bg-violet-100 rounded-full absolute top-6 left-[42%] translate-x-1/2 filter blur-3xl opacity-20">
-      </div>
-      <h2 className="mb-12 text-center text-3xl font-semibold lg:text-left">
+      <div className="container mx-auto">
+        <div className="w-[100px] ..."></div> 
+        <h2 className="mb-12 text-center text-3xl font-semibold lg:text-left">
           <span className="inline-block border-b-4 border-black pb-1">
             Skills
           </span>
-      </h2>
-          
-      <div className="w-full mt-8">
-        <Marquee
-          gradient={false}
-          speed={80}
-          pauseOnHover={true}
-          pauseOnClick={true}
-          delay={0}
-          play={true}
-          direction="left"
-        >
-          {skillsData.map((skill, id) => {
-            const skillImg = skillsImage(skill);
-            return (
-              skillImg && (
-                <div className="w-36 min-w-fit h-fit flex flex-col items-center justify-center transition-all duration-500 m-3 sm:m-5 rounded-lg group relative hover:scale-[1.15] cursor-pointer" key={id}>
-                  <div className="h-full w-full rounded-lg bg-gradient-to-b from-gray-700 via-gray-500 to-gray-700 shadow-none shadow-gray-50 group-hover:border-gray-500 transition-all duration-500">
-                    <div className="flex flex-col items-center justify-center gap-3 p-6">
-                      <div className="h-8 sm:h-10">
-                        <img
-                          src={skillImg.src}
-                          alt={skill}
-                          width={40}
-                          height={40}
-                          className="h-full w-auto rounded-lg"
-                        />
+        </h2>
+        <div className="w-full mt-8">
+          <Marquee gradient={false} speed={80} pauseOnHover={true} pauseOnClick={true} delay={0} play={true} direction="left">
+            {skillsData.map((skill, id) => {
+              const skillImg = skillsImage(skill);
+              return (
+                skillImg && (
+                  <div className="w-36 min-w-fit h-fit flex flex-col items-center justify-center transition-all duration-500 m-3 sm:m-5 rounded-lg group relative hover:scale-[1.15] cursor-pointer" key={id}>
+                    <div className="h-full w-full rounded-lg bg-gradient-to-b from-gray-700 via-gray-500 to-gray-700 shadow-none shadow-gray-50 group-hover:border-gray-500 transition-all duration-500">
+                      <div className="flex flex-col items-center justify-center gap-3 p-6">
+                        <div className="h-8 sm:h-10">
+                          <img
+                            src={skillImg.src}
+                            alt={skill}
+                            width={40}
+                            height={40}
+                            className="h-full w-auto rounded-lg"
+                          />
+                        </div>
+                        <p className="text-white text-sm sm:text-lg">
+                          {skill}
+                        </p>
                       </div>
-                      <p className="text-white text-sm sm:text-lg">
-                        {skill}
-                      </p>
                     </div>
                   </div>
-                </div>
-              )
-            );
-          })}
-        </Marquee>
+                )
+              );
+            })}
+          </Marquee>
+        </div>
       </div>
     </section>
   );
 }
 
 export default Skills;
+
+    

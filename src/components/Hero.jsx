@@ -35,16 +35,13 @@ function Hero() {
 
   return (
     // responsive hero section
-    <section 
-      id="hero" 
-      className="relative flex min-h-screen items-center justify-center overflow-x-hidden"
-    >
+    <section id="hero" className="relative flex min-h-screen items-center justify-center overflow-x-hidden px-6">
       {/* Vanta.js background effect */}
       <div ref={vantaRef} className="absolute inset-0 -z-10"></div>
       {/* Main content responsive */}
-      <div className="mx-auto flex w-full max-w-screen-lg flex-col-reverse items-center justify-center gap-12 px-6 pt-32 pb-16 text-white lg:flex-row lg:justify-between lg:gap-0 lg:pt-24 lg:pb-24">
+      <div className="container mx-auto flex w-full flex-col-reverse items-center justify-center gap-12 px-6 pt-32 pb-16 text-white lg:flex-row lg:justify-between lg:gap-0 lg:pt-24 lg:pb-24">
       {/* Hero text and buttons */}
-        <div className="z-10 flex max-w-xl flex-col items-center text-center lg:items-start lg:text-left">
+        <div className="z-10 flex lg:max-w-3xl flex-col items-center text-center lg:items-start lg:text-left">
           <h1 className="mb-4 text-4xl font-semibold md:text-5xl lg:text-6xl">Hi, I'm</h1>
           <h1 className="mb-6 text-4xl font-semibold md:text-5xl lg:text-6xl">Rifqi Nabil Akbar</h1>
           <p className="mb-6 text-base text-gray-200 md:text-lg text-justify">

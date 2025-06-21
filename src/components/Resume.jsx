@@ -28,7 +28,7 @@ function Resume() {
                 <p className="text-sm font-semibold text-gray-700">
                   2022 - 2026 (Expected)
                 </p>
-                <h4 className="text-lg font-bold text-gray-900">
+                <h4 className="py-2 text-lg font-bold text-gray-900">
                   Undergraduate in Information Systems
                 </h4>
                 <p className="text-base text-gray-600">
@@ -43,7 +43,7 @@ function Resume() {
                 <p className="text-sm font-semibold text-gray-700">
                   2019 - 2022
                 </p>
-                <h4 className="text-lg font-bold text-gray-900">
+                <h4 className="py-2 text-lg font-bold text-gray-900">
                   Mathematics and Natural Sciences
                 </h4>
                 <p className="text-base text-gray-600">SMA Negeri 3 Salatiga</p>
@@ -61,13 +61,13 @@ function Resume() {
                 <p className="text-sm font-semibold text-gray-700">
                   March 2025 - July 2025
                 </p>
-                <h4 className="text-lg font-bold text-gray-900">
+                <h4 className="py-2 text-lg font-bold text-gray-900">
                   Web Developer Intern
                 </h4>
                 <p className="text-base text-gray-600">
                   Dr. Oen Solo Baru Hospital
                 </p>
-                <ul className="ml-5 list-disc space-y-1 pt-2 text-base text-gray-600">
+                <ul className="ml-5 list-disc space-y-1 pt-2 text-base text-gray-600 text-justify">
                   <li>
                     Contributed to developing a web-based E-Logbook system using Laravel 11, Tailwind CSS, and PostgreSQL.
                   </li>

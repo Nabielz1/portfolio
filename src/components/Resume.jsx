@@ -69,10 +69,19 @@ function Resume() {
                 </p>
                 <ul className="ml-5 list-disc space-y-1 pt-2 text-base text-gray-600 text-justify">
                   <li>
-                    Contributed to developing a web-based E-Logbook system using Laravel 11, Tailwind CSS, and PostgreSQL.
+                    Contributed to developing a web-based E-Logbook system using Laravel 11, Tailwind CSS, and PostgreSQL aimed at supporting nurse competency assessments in a hospital environment.
                   </li>
                   <li>
-                    Implemented secure session-based authentication and structured the database using migrations.
+                    Designed an intuitive and responsive UI/UX to streamline daily clinical task input for nurses, enhancing usability in a hospital environment.
+                  </li>
+                  <li>
+                    Implemented secure session-based authentication using Laravel Breeze and managed database structure through migrations and seeders.
+                  </li>
+                  <li>
+                    Developed validation and scoring logic to log clinical activities (e.g., IV insertions, vital signs) and convert them into performance metrics based on job roles.
+                  </li>
+                  <li>
+                    Delivered a functional prototype that replaced manual logbooks, improved data accuracy, and enabled real-time supervisor monitoring.
                   </li>
                 </ul>
               </div>

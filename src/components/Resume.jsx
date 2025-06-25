@@ -20,7 +20,7 @@ function Resume() {
           
           {/* Resume Section 1 */}
           <div className="space-y-6">
-            <h3 className="text-2xl font-semibold text-gray-800">Education</h3>
+            <h3 className="text-2xl font-semibold text-gray-800">Educations</h3>
             <div className="relative border-l-2 border-gray-300 pl-6">
               {/* Education details */}
               <div className="mb-8 flex flex-col">
@@ -53,7 +53,7 @@ function Resume() {
 
           {/* Resume Section 2 */}
           <div className="space-y-6">
-            <h3 className="text-2xl font-semibold text-gray-800">Experience</h3>
+            <h3 className="text-2xl font-semibold text-gray-800">Experiences</h3>
             <div className="relative border-l-2 border-gray-300 pl-6">
               {/* Experience details */}
               <div className="flex flex-col">

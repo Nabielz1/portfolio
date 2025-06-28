@@ -1,16 +1,30 @@
+// src/components/Hero.jsx
+
 import React, { useEffect, useRef } from "react";
 import "../App.css";
 import heroImage from "/src/assets/portofolio-hero-image.png";
 import WAVES from "vanta/dist/vanta.waves.min";
 import * as THREE from "three";
 
+// 1. Import GSAP dan plugin SplitText-nya
+import { gsap } from "gsap";
+import { SplitText } from "gsap/SplitText";
+
+// 2. Daftarkan plugin SplitText
+gsap.registerPlugin(SplitText);
+
 function Hero() {
   const vantaRef = useRef(null);
+  // 3. Buat refs untuk setiap baris teks yang akan dianimasikan
+  const line1Ref = useRef(null);
+  const line2Ref = useRef(null);
 
+  // useEffect untuk Vanta.js background
   useEffect(() => {
     let vantaEffect = null;
     if (vantaRef.current) {
       vantaEffect = WAVES({
+        // ... (konfigurasi vanta Anda tetap sama)
         el: vantaRef.current,
         THREE: THREE,
         mouseControls: true,
@@ -23,7 +37,7 @@ function Hero() {
         color: 0x0,
         shininess: 25.0,
         waveHeight: 10.0,
-        waveSpeed: 1.40,
+        waveSpeed: 1.4,
         zoom: 1.64,
       });
     }
@@ -33,17 +47,57 @@ function Hero() {
     };
   }, []);
 
+  // 4. useEffect baru khusus untuk timeline animasi teks
+  useEffect(() => {
+    // Pastikan elemen sudah ada di DOM
+    if (line1Ref.current && line2Ref.current) {
+      // Split teks menjadi karakter
+      const splitLine1 = new SplitText(line1Ref.current, { type: "words" });
+      const splitLine2 = new SplitText(line2Ref.current, { type: "words" });
+
+      const words1 = splitLine1.words;
+      const words2 = splitLine2.words;
+
+      const tl = gsap.timeline();
+
+      tl.from(words1, {
+        opacity: 0,
+        y: 40,
+        duration: 0.5,
+        ease: "power3.out",
+        stagger: 0.1, 
+      });
+
+      tl.from(words2, {
+        opacity: 0,
+        y: 40,
+        duration: 0.5,
+        ease: "power3.out",
+        stagger: 0.1, // Jeda antar karakter
+      });
+
+      // Cleanup function untuk membereskan SplitText saat komponen unmount
+      return () => {
+        splitLine1.revert();
+        splitLine2.revert();
+      };
+    }
+  }, []); // [] dependency agar hanya berjalan sekali saat mount
+
   return (
-    // responsive hero section
     <section id="hero" className="relative flex min-h-screen items-center justify-center overflow-x-hidden px-6">
-      {/* Vanta.js background effect */}
       <div ref={vantaRef} className="absolute inset-0 -z-10"></div>
-      {/* Main content responsive - lg:gap-0 diubah menjadi lg:gap-12 */}
       <div className="container mx-auto flex w-full flex-col-reverse items-center justify-center gap-12 pt-32 pb-16 text-white lg:flex-row lg:justify-between lg:gap-12 lg:pt-24 lg:pb-24">
-        {/* Hero text and buttons */}
-        <div className="z-10 flex lg:max-w-4xl flex-col items-center text-center lg:items-start lg:text-left">
-          <h1 className="mb-4 text-3xl font-semibold md:text-5xl lg:text-6xl">Hi, I'm</h1>
-          <h1 className="mb-6 text-3xl font-semibold md:text-5xl lg:text-6xl">Rifqi Nabil Akbar</h1>
+        <div className="z-10 flex flex-col items-center text-center lg:max-w-4xl lg:items-start lg:text-left">
+          
+          {/* 5. Gunakan h1 biasa dan tambahkan ref */}
+          <h1 ref={line1Ref} className="mb-4 text-3xl font-semibold md:text-5xl lg:text-6xl" style={{ overflow: "hidden" }}>
+            Hi, I'm
+          </h1>
+          <h1 ref={line2Ref} className="mb-6 text-3xl font-semibold md:text-5xl lg:text-6xl" style={{ overflow: "hidden" }}>
+            Rifqi Nabil Akbar
+          </h1>
+
           <p className="mb-6 text-base text-gray-200 md:text-md lg:text-lg text-justify">
             Welcome to my professional portfolio website. This site showcases my work and projects, highlighting my skills in software development, data analysis, and system design. Explore my projects, learn more about my background, and feel free to get in touch!
           </p>
@@ -51,14 +105,12 @@ function Hero() {
             <a href="#contact" className="rounded bg-white px-6 py-3 text-black transition hover:bg-gray-300">Contact Me</a>
             <a href="#projects" className="rounded border-2 border-white px-6 py-3 text-white transition hover:bg-white hover:bg-opacity-20 hover:text-black">My Portfolio</a>
           </div>
-          {/* Social media links */}
           <div className="flex space-x-6">
             <a href="https://github.com/Nabielz1" target="_blank" rel="noopener noreferrer" className="text-2xl text-white transition hover:scale-110"><i className="fab fa-github"></i></a>
             <a href="https://www.linkedin.com/in/rifqi-nabil-akbar/" target="_blank" rel="noopener noreferrer" className="text-2xl text-white transition hover:scale-110"><i className="fab fa-linkedin"></i></a>
             <a href="https://www.instagram.com/ripkii_n/" target="_blank" rel="noopener noreferrer" className="text-2xl text-white transition hover:scale-110"><i className="fab fa-instagram"></i></a>
           </div>
         </div>
-        {/* Hero image */}
         <div className="z-10 w-full max-w-[280px] aspect-square shrink-0 rounded-full border-4 border-white md:max-w-[350px]">
           <img
             src={heroImage}

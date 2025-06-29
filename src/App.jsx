@@ -39,11 +39,11 @@ function App() {
         });
         gsap.ticker.lagSmoothing(0);
 
-      }, 1000);
+      }, 500);
 
       return () => clearTimeout(transitionTimer);
 
-    }, 3000);
+    }, 1000);
 
     return () => {
       clearTimeout(loadingTimer);

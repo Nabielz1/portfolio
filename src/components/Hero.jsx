@@ -85,8 +85,8 @@ function Hero() {
   }, []); // [] dependency agar hanya berjalan sekali saat mount
 
   return (
-    <section id="hero" className="relative flex min-h-screen items-center justify-center overflow-x-hidden px-6">
-      <div ref={vantaRef} className="absolute inset-0 -z-10"></div>
+    <section id="hero" className="relativ flex min-h-screen items-center justify-center overflow-x-hidden px-6">
+      <div ref={vantaRef} className="fixed inset-0 -z-10"></div>
       <div className="container mx-auto flex w-full flex-col-reverse items-center justify-center gap-12 pt-32 pb-16 text-white lg:flex-row lg:justify-between lg:gap-12 lg:pt-24 lg:pb-24">
         <div className="z-10 flex flex-col items-center text-center lg:max-w-4xl lg:items-start lg:text-left">
           

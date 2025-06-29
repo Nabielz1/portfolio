@@ -29,7 +29,7 @@ function Projects() {
     // responsive section for projects
     <section 
       id="projects" 
-      className="px-6 py-16 sm:px-12 lg:px-24 lg:py-20"
+      className="bg-white px-6 py-16 sm:px-12 lg:px-24 lg:py-20"
     >
       <div className="container mx-auto">
       {/* Title for the Projects section */}

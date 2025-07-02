@@ -102,8 +102,7 @@ function Hero() {
             Welcome to my professional portfolio website. This site showcases my work and projects, highlighting my skills in software development, data analysis, and system design. Explore my projects, learn more about my background, and feel free to get in touch!
           </p>
           <div className="mb-6 flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4">
-            <a href="#contact" className="rounded bg-white px-6 py-3 text-black transition hover:bg-gray-300">Contact Me</a>
-            <a href="#projects" className="rounded border-2 border-white px-6 py-3 text-white transition hover:bg-white hover:bg-opacity-20 hover:text-black">My Portfolio</a>
+            <a href="/src/assets/CV_Rifqi Nabil Akbar.pdf" download class="rounded bg-white px-8 py-3 text-black transition hover:bg-gray-300">Download CV</a>
           </div>
           <div className="flex space-x-6">
             <a href="https://github.com/Nabielz1" target="_blank" rel="noopener noreferrer" className="text-2xl text-white transition hover:scale-110"><i className="fab fa-github"></i></a>

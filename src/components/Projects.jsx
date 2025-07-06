@@ -26,10 +26,18 @@ function Projects() {
     {
       title: "Bike Sharing Analysis",
       description: "Developed an interactive dashboard to translate raw bike rent data into actionable business insights. Through exploratory data analysis, this project visualizes the impact of weather, seasonality, and time of day on rental demand, providing a clear view of user behavior and operational patterns.",
-      image: "/src/assets/bike-sharing-analysis.png",
+      image: "/assets/bike-sharing-analysis.png",
       tech: ["Python", "Pandas", "Seaborn", "Streamlit"],
       github: "https://github.com/Nabielz1/Bike_Sharing_Analysis",
       streamlit: "https://bikesharinganalysis-rifqinabil.streamlit.app/"
+    },
+    {
+      title: "Triv App Review Sentiment Analysis",
+      description: "Developed an interactive dashboard to analyze sentiment from user reviews of the Triv application. This project applies Natural Language Processing (NLP) techniques to clean text, handle local slang, and classify each review into positive or negative sentiment, providing valuable insights into customer satisfaction.",
+      image: "/assets/triv-sentiment-analysis.png",
+      tech: ["Python", "Pandas", "NLTK", "Scikit-learn", "Streamlit"],
+      github: "https://github.com/Nabielz1/triv-sentiment-analysis",
+      streamlit: "https://nabielz1-triv-sentiment-analysis-app-jqpl5t.streamlit.app/"
     },
   ];
 

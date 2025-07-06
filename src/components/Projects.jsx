@@ -23,16 +23,24 @@ function Projects() {
       tech: ["Figma", "UI/UX Design"],
       figma: "https://www.figma.com/proto/Iee8qof2qRtFTlm9Vfw3KJ/ECOWASTE?node-id=573-775&p=f&t=n8rRspXwpZD2zCy0-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=4%3A176"
     },
+    {
+      title: "Bike Sharing Analysis",
+      description: "Developed an interactive dashboard to translate raw bike rent data into actionable business insights. Through exploratory data analysis, this project visualizes the impact of weather, seasonality, and time of day on rental demand, providing a clear view of user behavior and operational patterns.",
+      image: "/src/assets/bike-sharing-analysis.png",
+      tech: ["Python", "Pandas", "Seaborn", "Streamlit"],
+      github: "https://github.com/Nabielz1/Bike_Sharing_Analysis",
+      streamlit: "https://bikesharinganalysis-rifqinabil.streamlit.app/"
+    },
   ];
 
   return (
     // responsive section for projects
-    <section 
-      id="projects" 
+    <section
+      id="projects"
       className="bg-white px-6 py-16 sm:px-12 lg:px-24 lg:py-20"
     >
       <div className="container mx-auto">
-      {/* Title for the Projects section */}
+        {/* Title for the Projects section */}
         <h2 className="mb-12 text-center text-3xl font-semibold lg:text-left">
           <span className="inline-block border-b-4 border-black pb-1">
             Portfolio
@@ -51,15 +59,38 @@ function Projects() {
                     <span key={idx} className="rounded-full bg-gray-200 px-3 py-1 text-xs font-semibold text-gray-800">{tech}</span>
                   ))}
                 </div>
-                <div className="mt-6 pt-4">
-                   <a 
-                     href={project.figma || project.github}
-                     target="_blank" 
-                     rel="noopener noreferrer" 
-                     className="inline-block rounded-md bg-gray-800 px-4 py-2 text-sm text-white transition hover:bg-gray-950"
-                   >
-                    {project.figma ? 'Figma' : 'GitHub'}
-                   </a>
+                {/* Container for project links/buttons */}
+                <div className="mt-6 flex flex-wrap gap-3 pt-4">
+                  {project.figma && (
+                    <a
+                      href={project.figma}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-block rounded-md bg-gray-800 px-4 py-2 text-sm text-white transition hover:bg-gray-950"
+                    >
+                      Figma
+                    </a>
+                  )}
+                  {project.github && (
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-block rounded-md bg-gray-800 px-4 py-2 text-sm text-white transition hover:bg-gray-950"
+                    >
+                      GitHub
+                    </a>
+                  )}
+                  {project.streamlit && (
+                    <a
+                      href={project.streamlit}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-block rounded-md bg-gray-800 px-4 py-2 text-sm text-white transition hover:bg-gray-950"
+                    >
+                      Streamlit
+                    </a>
+                  )}
                 </div>
               </div>
             </div>

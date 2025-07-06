@@ -69,19 +69,19 @@ function Resume() {
                 </p>
                 <ul className="ml-5 list-disc space-y-1 pt-2 text-base text-gray-600 text-justify">
                   <li>
-                    Contributed to developing a web-based E-Logbook system using Laravel 11, Tailwind CSS, and PostgreSQL aimed at supporting nurse competency assessments in a hospital environment.
+                    Worked as a Full-Stack Web Developer on two internal systems, a web-based E-Logbook for nurse activitytracking and an E-Learning platform for hospital-wide training management.
                   </li>
                   <li>
-                    Designed an intuitive and responsive UI/UX to streamline daily clinical task input for nurses, enhancing usability in a hospital environment.
+                    Developed the E-Logbook using Laravel 11, Tailwind CSS, and PostgreSQL with features including clinical task logging, scoring logic, user authentication, and Excel-based reporting.
                   </li>
                   <li>
-                    Implemented secure session-based authentication using Laravel Breeze and managed database structure through migrations and seeders.
+                    Delivered  a  fully  functional  prototype  of  the  E-Logbook,  which  is  currently  being  tested  in  the  nursing department to improve accuracy and supervisor monitoring.
                   </li>
                   <li>
-                    Developed validation and scoring logic to log clinical activities (e.g., IV insertions, vital signs) and convert them into performance metrics based on job roles.
+                    Designed  and  built  the  E-Learning  frontend  using  React,  TypeScript,  Tailwind  CSS,  and  PostgreSQL,featuring pre/post-tests, automated certificates, and role-based access control.
                   </li>
                   <li>
-                    Delivered a functional prototype that replaced manual logbooks, improved data accuracy, and enabled real-time supervisor monitoring.
+                    Contributed  to  backend  setup  using  NestJS  with  a  focus  on  secure  API  structure,  modular  databaseschema, and role-based content accessibility.
                   </li>
                 </ul>
               </div>

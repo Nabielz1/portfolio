@@ -1,21 +1,16 @@
-// src/components/Hero.jsx
-
 import React, { useEffect, useRef } from "react";
 import "../App.css";
 import heroImage from "/src/assets/portofolio-hero-image.png";
 import WAVES from "vanta/dist/vanta.waves.min";
 import * as THREE from "three";
-
-// 1. Import GSAP dan plugin SplitText-nya
 import { gsap } from "gsap";
 import { SplitText } from "gsap/SplitText";
 
-// 2. Daftarkan plugin SplitText
+
 gsap.registerPlugin(SplitText);
 
 function Hero() {
   const vantaRef = useRef(null);
-  // 3. Buat refs untuk setiap baris teks yang akan dianimasikan
   const line1Ref = useRef(null);
   const line2Ref = useRef(null);
 
@@ -24,7 +19,6 @@ function Hero() {
     let vantaEffect = null;
     if (vantaRef.current) {
       vantaEffect = WAVES({
-        // ... (konfigurasi vanta Anda tetap sama)
         el: vantaRef.current,
         THREE: THREE,
         mouseControls: true,
@@ -47,11 +41,9 @@ function Hero() {
     };
   }, []);
 
-  // 4. useEffect baru khusus untuk timeline animasi teks
   useEffect(() => {
-    // Pastikan elemen sudah ada di DOM
+    
     if (line1Ref.current && line2Ref.current) {
-      // Split teks menjadi karakter
       const splitLine1 = new SplitText(line1Ref.current, { type: "words" });
       const splitLine2 = new SplitText(line2Ref.current, { type: "words" });
 
@@ -73,16 +65,15 @@ function Hero() {
         y: 40,
         duration: 0.5,
         ease: "power3.out",
-        stagger: 0.1, // Jeda antar karakter
+        stagger: 0.1, 
       });
 
-      // Cleanup function untuk membereskan SplitText saat komponen unmount
       return () => {
         splitLine1.revert();
         splitLine2.revert();
       };
     }
-  }, []); // [] dependency agar hanya berjalan sekali saat mount
+  }, []); 
 
   return (
     <section id="hero" className="relative flex min-h-screen items-center justify-center overflow-x-hidden px-6">
@@ -90,7 +81,6 @@ function Hero() {
       <div className="container mx-auto flex w-full flex-col-reverse items-center justify-center gap-12 pt-32 pb-16 text-white lg:flex-row lg:justify-between lg:gap-12 lg:pt-24 lg:pb-24">
         <div className="z-10 flex flex-col items-center text-center lg:max-w-4xl lg:items-start lg:text-left">
           
-          {/* 5. Gunakan h1 biasa dan tambahkan ref */}
           <h1 ref={line1Ref} className="mb-4 text-3xl font-semibold md:text-5xl lg:text-6xl" style={{ overflow: "hidden" }}>
             Hi, I'm
           </h1>
@@ -102,7 +92,13 @@ function Hero() {
             Welcome to my professional portfolio website. This site showcases my work and projects, highlighting my skills in software development, data analysis, and system design. Explore my projects, learn more about my background, and feel free to get in touch!
           </p>
           <div className="mb-6 flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4">
-            <a href="/src/assets/CV_Rifqi Nabil Akbar.pdf" download className="rounded bg-white px-8 py-3 text-black transition hover:bg-gray-300">Download CV</a>
+            <a 
+              href="/CV_Rifqi Nabil Akbar.pdf" 
+              download="CV_Rifqi Nabil Akbar.pdf" 
+              className="rounded bg-white px-8 py-3 text-black transition hover:bg-gray-300"
+            >
+              Download CV
+            </a>
           </div>
           <div className="flex space-x-6">
             <a href="https://github.com/Nabielz1" target="_blank" rel="noopener noreferrer" className="text-2xl text-white transition hover:scale-110"><i className="fab fa-github"></i></a>

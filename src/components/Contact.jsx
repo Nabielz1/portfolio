@@ -111,7 +111,7 @@ function Contact() {
                   className="text-red-500 text-sm"
                 />
               </div>
-              <button type="submit" disabled={state.submitting} className="w-full rounded-md bg-gray-950 py-3 text-white transition hover:bg-gray-800 disabled:bg-gray-400">
+              <button type="submit" disabled={state.submitting} className="w-full rounded-md bg-gray-950 py-3 text-white transition hover:bg-gray-800 disabled:bg-gray-700">
                 Send Message
               </button>
             </form>

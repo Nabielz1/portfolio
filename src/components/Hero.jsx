@@ -93,7 +93,7 @@ function Hero() {
           </p>
           <div className="mb-6 flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4">
             <a 
-              href="/public/assets/CV_Rifqi Nabil Akbar.pdf" 
+              href="/assets/CV_Rifqi Nabil Akbar.pdf" 
               download="CV_Rifqi Nabil Akbar.pdf" 
               className="rounded bg-white px-8 py-3 text-black transition hover:bg-gray-300"
             >

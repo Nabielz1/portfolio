@@ -1,44 +1,31 @@
-import React, { useState } from "react";
-import "../App.css"; // Import Tailwind CSS styles
+import { useEffect, useRef } from 'react';
+import { useForm, ValidationError } from '@formspree/react';
+import Swal from 'sweetalert2'; 
+import "../App.css"; 
 
 function Contact() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
-  });
-  
-  // State baru untuk menampilkan pesan konfirmasi
-  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [state, handleSubmit] = useForm("xeokbgeb");
+  const formRef = useRef(); 
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Form data submitted:", formData);
-    
-    // Tampilkan pesan konfirmasi dan reset form
-    setIsSubmitted(true);
-    setFormData({ name: "", email: "", subject: "", message: "" });
-
-    // Sembunyikan pesan setelah beberapa detik
-    setTimeout(() => {
-      setIsSubmitted(false);
-    }, 4000);
-  };
+  useEffect(() => {
+    if (state.succeeded) {
+      Swal.fire({
+        title: "Message Sent!",
+        text: "Thanks for your message! I'll get back to you soon.",
+        icon: "success",
+        confirmButtonColor: '#0f172a', 
+        confirmButtonText: 'OK'
+      });
+      formRef.current.reset(); 
+    }
+  }, [state.succeeded]);
 
   return (
-    // responsive section for contact
     <section 
       id="contact" 
       className="bg-white px-6 py-16 sm:px-12 md:px-24 lg:py-20"
     >
       <div className="container mx-auto">
-        {/* Section Title */}
         <h2 className="mb-12 text-center text-3xl font-semibold lg:text-left">
           <span className="inline-block border-b-4 border-black pb-1">
             Contact
@@ -46,10 +33,8 @@ function Contact() {
         </h2>
         
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-2">
-          
-          {/* Contact */}
+          {/* Contact Info */}
           <div className="flex flex-col gap-8">
-            {/* Email Section */}
             <div className="flex items-start gap-4">
               <i className="fas fa-envelope mt-1 w-6 text-center text-2xl text-gray-600"></i>
               <div>
@@ -59,7 +44,6 @@ function Contact() {
                 </p>
               </div>
             </div>
-            {/* Location Section */}
             <div className="flex items-start gap-4">
               <i className="fas fa-map-marker-alt mt-1 w-6 text-center text-2xl text-gray-600"></i>
               <div>
@@ -71,47 +55,63 @@ function Contact() {
             </div>
           </div>
 
-          {/* Kolom Form */}
+          {/* Form Column */}
           <div>
-            {isSubmitted && (
-              <div className="mb-4 rounded-md bg-green-100 p-3 text-center text-green-800">
-                Your message has been sent successfully!
-              </div>
-            )}
-            <form onSubmit={handleSubmit} className="space-y-4">
+            {/* 4. Attach the ref to the form */}
+            <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
               <div>
                 <label htmlFor="name" className="text-gray-600">Name</label>
                 <input
                   type="text" id="name" name="name"
-                  value={formData.name} onChange={handleChange}
                   className="w-full rounded-md border p-3" required
+                />
+                <ValidationError 
+                  prefix="Name" 
+                  field="name"
+                  errors={state.errors}
+                  className="text-red-500 text-sm"
                 />
               </div>
               <div>
                 <label htmlFor="email" className="text-gray-600">Email</label>
                 <input
                   type="email" id="email" name="email"
-                  value={formData.email} onChange={handleChange}
                   className="w-full rounded-md border p-3" required
+                />
+                <ValidationError 
+                  prefix="Email" 
+                  field="email"
+                  errors={state.errors}
+                  className="text-red-500 text-sm"
                 />
               </div>
               <div>
                 <label htmlFor="subject" className="text-gray-600">Subject</label>
                 <input
                   type="text" id="subject" name="subject"
-                  value={formData.subject} onChange={handleChange}
                   className="w-full rounded-md border p-3" required
+                />
+                <ValidationError 
+                  prefix="Subject" 
+                  field="subject"
+                  errors={state.errors}
+                  className="text-red-500 text-sm"
                 />
               </div>
               <div>
                 <label htmlFor="message" className="text-gray-600">Message</label>
                 <textarea
                   id="message" name="message"
-                  value={formData.message} onChange={handleChange}
                   className="w-full rounded-md border p-3" rows="4" required
                 ></textarea>
+                <ValidationError 
+                  prefix="Message" 
+                  field="message"
+                  errors={state.errors}
+                  className="text-red-500 text-sm"
+                />
               </div>
-              <button type="submit" className="w-full rounded-md bg-gray-950 py-3 text-white transition hover:bg-gray-800">
+              <button type="submit" disabled={state.submitting} className="w-full rounded-md bg-gray-950 py-3 text-white transition hover:bg-gray-800 disabled:bg-gray-400">
                 Send Message
               </button>
             </form>

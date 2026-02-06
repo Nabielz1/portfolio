@@ -35,3 +35,7 @@
 /* * {
   outline: 1px solid red !important;
 } */
+
+#language-toggle:checked ~ .dot {
+  transform: translateX(100%);
+}

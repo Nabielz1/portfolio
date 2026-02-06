@@ -1,0 +1,55 @@
+{
+  "nav_home": "HOME",
+  "nav_about": "ABOUT",
+  "nav_resume": "RESUME",
+  "nav_skills": "SKILLS",
+  "nav_portfolio": "PORTFOLIO",
+  "nav_contact": "CONTACT",
+
+  "hero_greeting": "Hi, I'm",
+  "hero_name": "Rifqi Nabil Akbar",
+  "hero_description": "Welcome to my professional portfolio website. This site showcases my work and projects, highlighting my skills in software development, data analysis, and system design. Explore my projects, learn more about my background, and feel free to get in touch!",
+  "hero_download_cv": "Download CV",
+
+  "about_title": "About",
+  "about_text": "I am an enthusiastic, well-organized, and deeply inquisitive third-year Information Systems student at Satya Wacana Christian University, with a strong passion for technology, software development, system design, business analysis, and data analysis. Skilled in adapting to new environments, collaborating in teams, and communicating technical ideas effectively, I am passionate about bridging technology and business. My hands-on experience in designing intuitive systems, analyzing data, and collaborating with teams to drive impactful solutions fuels my desire to create innovative and effective solutions that add real value. Eager to deepen my knowledge and gain practical experience in areas such as software development, data analysis, and system design, I am committed to excellence and continuous learning. My journey is just beginning, and I look forward to exploring new opportunities that challenge my skills and expand my knowledge.",
+
+  "resume_title": "Resume",
+  "resume_education_title": "Educations",
+  "resume_experience_title": "Experiences",
+  "undergraduate_degree": "Undergraduate in Information Systems",
+  "high_school_major": "Mathematics and Natural Sciences",
+  "web_dev_intern": "Web Developer Intern",
+  "intern_desc_1": "Worked as a Full-Stack Web Developer on two internal systems, a web-based E-Logbook for nurse activity tracking and an E-Learning platform for hospital-wide training management.",
+  "intern_desc_2": "Developed the E-Logbook using Laravel 11, Tailwind CSS, and PostgreSQL with features including clinical task logging, scoring logic, user authentication, and Excel-based reporting.",
+  "intern_desc_3": "Delivered a fully functional prototype of the E-Logbook, which is currently being tested in the nursing department to improve accuracy and supervisor monitoring.",
+  "intern_desc_4": "Designed and built the E-Learning frontend using React, TypeScript, Tailwind CSS, and PostgreSQL, featuring pre/post-tests, automated certificates, and role-based access control.",
+  "intern_desc_5": "Contributed to backend setup using NestJS with a focus on secure API structure, modular database schema, and role-based content accessibility.",
+
+  "skills_title": "Skills",
+
+  "portfolio_title": "Portfolio",
+  "jobseeker_app_title": "Jobseeker Mobile App",
+  "jobseeker_app_desc": "This project showcases the Gigsy Jobseeker Mobile App, developed for the UI/UX competition at INSPACE ITK 2024 and it successfully became a finalist in the competition. The app is designed to help jobseekers find the right opportunities.",
+  "mindfulness_app_title": "Mindfulness Mobile App",
+  "mindfulness_app_desc": "This project showcases the Improve It Mindfulness Mobile App, developed for the ISFEST UKSW 2024 competition. The app focuses on mindfulness and well-being, offering features like mood tracking, sleep quality monitoring, and meditation sessions.",
+  "waste_app_title": "Waste Disposal Mobile App",
+  "waste_app_desc": "This project showcases the EcoWaste Mobile App, developed for the iWeek UI/UX competition. The app is designed to streamline waste collection and disposal, providing users with easy access to pickup services, waste categorization, and nearby disposal sites.",
+  "bike_analysis_title": "Bike Sharing Analysis",
+  "bike_analysis_desc": "Developed an interactive dashboard to translate raw bike rent data into actionable business insights. Through exploratory data analysis, this project visualizes the impact of weather, seasonality, and time of day on rental demand, providing a clear view of user behavior and operational patterns.",
+  "triv_analysis_title": "Triv App Review Sentiment Analysis",
+  "triv_analysis_desc": "Developed an interactive dashboard to analyze sentiment from user reviews of the Triv application. This project applies Natural Language Processing (NLP) techniques to clean text, handle local slang, and classify each review into positive or negative sentiment, providing valuable insights into customer satisfaction.",
+
+  "contact_title": "Contact",
+  "contact_email_title": "Email",
+  "contact_location_title": "Location",
+  "contact_form_name": "Name",
+  "contact_form_email": "Email",
+  "contact_form_subject": "Subject",
+  "contact_form_message": "Message",
+  "contact_form_send": "Send Message",
+  "contact_success_title": "Message Sent!",
+  "contact_success_text": "Thanks for your message! I'll get back to you soon.",
+
+  "footer_text": "© 2025 Portfolio by Rifqi Nabil Akbar"
+}

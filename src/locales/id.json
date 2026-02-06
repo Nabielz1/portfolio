@@ -1,0 +1,55 @@
+{
+  "nav_home": "BERANDA",
+  "nav_about": "TENTANG",
+  "nav_resume": "RIWAYAT",
+  "nav_skills": "KEAHLIAN",
+  "nav_portfolio": "PORTOFOLIO",
+  "nav_contact": "KONTAK",
+
+  "hero_greeting": "Hai, Saya",
+  "hero_name": "Rifqi Nabil Akbar",
+  "hero_description": "Selamat datang di situs portofolio profesional saya. Situs ini menampilkan karya dan proyek saya, menyoroti keahlian saya dalam pengembangan perangkat lunak, analisis data, dan desain sistem. Jelajahi proyek saya, pelajari lebih lanjut tentang latar belakang saya, dan jangan ragu untuk menghubungi!",
+  "hero_download_cv": "Unduh CV",
+
+  "about_title": "Tentang Saya",
+  "about_text": "Saya adalah mahasiswa Sistem Informasi tahun ketiga yang antusias, terorganisir, dan memiliki rasa ingin tahu yang mendalam di Universitas Kristen Satya Wacana, dengan minat kuat pada teknologi, pengembangan perangkat lunak, desain sistem, analisis bisnis, dan analisis data. Terampil beradaptasi dengan lingkungan baru, berkolaborasi dalam tim, dan mengomunikasikan ide-ide teknis secara efektif, saya bersemangat menjembatani teknologi dan bisnis. Pengalaman langsung saya dalam merancang sistem yang intuitif, menganalisis data, dan berkolaborasi dengan tim untuk mendorong solusi yang berdampak memicu keinginan saya untuk menciptakan solusi inovatif dan efektif yang memberikan nilai nyata. Bersemangat untuk memperdalam pengetahuan dan mendapatkan pengalaman praktis di bidang-bidang seperti pengembangan perangkat lunak, analisis data, dan desain sistem, saya berkomitmen pada keunggulan dan pembelajaran berkelanjutan. Perjalanan saya baru saja dimulai, dan saya berharap dapat mengeksplorasi peluang baru yang menantang keterampilan dan memperluas pengetahuan saya.",
+
+  "resume_title": "Riwayat",
+  "resume_education_title": "Pendidikan",
+  "resume_experience_title": "Pengalaman",
+  "undergraduate_degree": "Sarjana Sistem Informasi",
+  "high_school_major": "Matematika dan Ilmu Pengetahuan Alam",
+  "web_dev_intern": "Intern Pengembang Web",
+  "intern_desc_1": "Bekerja sebagai Pengembang Web Full-Stack pada dua sistem internal, E-Logbook berbasis web untuk pelacakan aktivitas perawat dan platform E-Learning untuk manajemen pelatihan di seluruh rumah sakit.",
+  "intern_desc_2": "Mengembangkan E-Logbook menggunakan Laravel 11, Tailwind CSS, dan PostgreSQL dengan fitur-fitur termasuk pencatatan tugas klinis, logika penilaian, otentikasi pengguna, dan pelaporan berbasis Excel.",
+  "intern_desc_3": "Menghasilkan prototipe E-Logbook yang berfungsi penuh, yang saat ini sedang diuji di departemen keperawatan untuk meningkatkan akurasi dan pemantauan supervisor.",
+  "intern_desc_4": "Merancang dan membangun frontend E-Learning menggunakan React, TypeScript, Tailwind CSS, dan PostgreSQL, yang dilengkapi dengan tes pra/pasca, sertifikat otomatis, dan kontrol akses berbasis peran.",
+  "intern_desc_5": "Berkontribusi pada penyiapan backend menggunakan NestJS dengan fokus pada struktur API yang aman, skema database modular, dan aksesibilitas konten berbasis peran.",
+
+  "skills_title": "Keahlian",
+
+  "portfolio_title": "Portofolio",
+  "jobseeker_app_title": "Aplikasi Mobile Pencari Kerja",
+  "jobseeker_app_desc": "Proyek ini menampilkan Aplikasi Seluler Pencari Kerja Gigsy, yang dikembangkan untuk kompetisi UI/UX di INSPACE ITK 2024 dan berhasil menjadi finalis dalam kompetisi tersebut. Aplikasi ini dirancang untuk membantu para pencari kerja menemukan peluang yang tepat.",
+  "mindfulness_app_title": "Aplikasi Mobile Mindfulness",
+  "mindfulness_app_desc": "Proyek ini menampilkan Aplikasi Seluler Improve It Mindfulness, yang dikembangkan untuk kompetisi ISFEST UKSW 2024. Aplikasi ini berfokus pada kesadaran dan kesejahteraan, menawarkan fitur-fitur seperti pelacakan suasana hati, pemantauan kualitas tidur, dan sesi meditasi.",
+  "waste_app_title": "Aplikasi Mobile Pembuangan Sampah",
+  "waste_app_desc": "Proyek ini menampilkan Aplikasi Seluler EcoWaste, yang dikembangkan untuk kompetisi UI/UX iWeek. Aplikasi ini dirancang untuk menyederhanakan pengumpulan dan pembuangan sampah, menyediakan pengguna dengan akses mudah ke layanan penjemputan, kategorisasi sampah, dan lokasi pembuangan terdekat.",
+  "bike_analysis_title": "Analisis Berbagi Sepeda",
+  "bike_analysis_desc": "Mengembangkan dasbor interaktif untuk menerjemahkan data mentah penyewaan sepeda menjadi wawasan bisnis yang dapat ditindaklanjuti. Melalui analisis data eksplorasi, proyek ini memvisualisasikan dampak cuaca, musim, dan waktu terhadap permintaan sewa, memberikan pandangan yang jelas tentang perilaku pengguna dan pola operasional.",
+  "triv_analysis_title": "Analisis Sentimen Ulasan Aplikasi Triv",
+  "triv_analysis_desc": "Mengembangkan dasbor interaktif untuk menganalisis sentimen dari ulasan pengguna aplikasi Triv. Proyek ini menerapkan teknik Pemrosesan Bahasa Alami (NLP) untuk membersihkan teks, menangani bahasa gaul lokal, dan mengklasifikasikan setiap ulasan menjadi sentimen positif atau negatif, memberikan wawasan berharga tentang kepuasan pelanggan.",
+
+  "contact_title": "Kontak",
+  "contact_email_title": "Email",
+  "contact_location_title": "Lokasi",
+  "contact_form_name": "Nama",
+  "contact_form_email": "Email",
+  "contact_form_subject": "Subjek",
+  "contact_form_message": "Pesan",
+  "contact_form_send": "Kirim Pesan",
+  "contact_success_title": "Pesan Terkirim!",
+  "contact_success_text": "Terima kasih atas pesan Anda! Saya akan segera menghubungi Anda kembali.",
+
+  "footer_text": "© 2025 Portofolio oleh Rifqi Nabil Akbar"
+}
